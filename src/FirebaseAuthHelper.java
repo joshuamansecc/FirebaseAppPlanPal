@@ -4,7 +4,10 @@ import java.net.URL;
 import org.json.JSONObject;
 
 public class FirebaseAuthHelper {
-    private static final String API_KEY = "AIzaSyCP-AYQKRUpI3UkyJcop7q6S2ZnCsarrAE";
+    private static final String API_KEY = System.getenv("FIREBASE_API_KEY");
+    // Retrieve Firebase API key securely from environment variable
+// This prevents hardcoding sensitive information in the source code,
+// reducing the risk of exposing the key if the code is uploaded to GitHub.
 
     // Method to sign in a user using email and password
     public static JSONObject signIn(String email, String password) throws Exception {

@@ -57,7 +57,8 @@ public class ToDoWindow extends JFrame {
                 tasks.put(listModel.get(i));
             }
 
-            String urlStr = "https://it488databaseandauthentication-default-rtdb.firebaseio.com/todos/" + uid + ".json?auth=" + idToken;
+            String urlStr = "https://it488unit6newauthvers-default-rtdb.firebaseio.com/todos/" + uid + ".json?auth=" + idToken;
+            //updated the FireBase API Key as referred to from last time
             HttpURLConnection conn = (HttpURLConnection) new URL(urlStr).openConnection();
             conn.setRequestMethod("PUT");
             conn.setRequestProperty("Content-Type", "application/json");
@@ -75,7 +76,8 @@ public class ToDoWindow extends JFrame {
 
     private void loadFromFirebase() {
         try {
-            String urlStr = "https://it488databaseandauthentication-default-rtdb.firebaseio.com/todos/" + uid + ".json?auth=" + idToken;
+            String urlStr = "https://it488unit6newauthvers-default-rtdb.firebaseio.com/todos/" + uid + ".json?auth=" + idToken;
+            //updated the FireBase API Key as referred to from last time
             HttpURLConnection conn = (HttpURLConnection) new URL(urlStr).openConnection();
             conn.setRequestMethod("GET");
 
